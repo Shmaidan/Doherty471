@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Testing : MonoBehaviour
 {
 
@@ -17,9 +17,9 @@ public class Testing : MonoBehaviour
     void Update()
     {
        
-        if (t.position.y > 10){
+        if (t.position.y > 12){
             speed = speed * -1;
-        } else if (t.position.y < -10)
+        } else if (t.position.y < 8)
         {
             speed = speed * -1;
         }
