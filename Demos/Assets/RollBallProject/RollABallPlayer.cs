@@ -4,6 +4,7 @@ public class RollABallPlayer : MonoBehaviour
 {
     Vector2 m;
     Rigidbody rb;
+    [SerializeField] private float speed;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,9 +21,9 @@ public class RollABallPlayer : MonoBehaviour
         float x_dir = m.x;
         float z_dir = m.y;
         Vector3 actual_movement = new Vector3(x_dir, 0, z_dir);
-        print(actual_movement);
+        print(actual_movement * speed);
 
-        rb.AddForce(actual_movement);
+        rb.AddForce(actual_movement * speed);
     }
 
     void OnMove(InputValue movement)
