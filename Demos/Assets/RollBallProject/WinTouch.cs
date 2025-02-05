@@ -14,7 +14,7 @@ public class WinTouch : MonoBehaviour
         if (player.gameObject.tag == "Player")
         {
             uiObject.SetActive(true);
-            SceneManager.LoadScene(1); // Reload the current scene
+            SceneManager.LoadScene(0); // Reload the current scene
 
         }
     }
