@@ -1,9 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class FirstPersonController : MonoBehaviour
 {
+
+
     Vector2 movement;
     Vector2 mouseMovement;
+    
     float cameraUpRotation;
     CharacterController controller;
     [SerializeField]
@@ -16,6 +20,14 @@ public class FirstPersonController : MonoBehaviour
     GameObject bulletSpawner;
     [SerializeField]
     GameObject bullet;
+
+    //Jumping
+    bool hasJumped = false;
+    float ySpeed = 0;
+    [SerializeField]
+    float jumpHeight = 1.0f;
+    [SerializeField]
+    float gravityVal = 9.8f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -42,6 +54,15 @@ public class FirstPersonController : MonoBehaviour
         float moveZ = movement.y;
         Vector3 actual_movement = (transform.forward * moveZ) + (transform.right * moveX);
 
+        //jumping code
+
+        if (hasJumped)
+        {
+            hasJumped = false;
+            ySpeed = jumpHeight;
+        }
+        ySpeed -= gravityVal * Time.deltaTime;   
+        actual_movement.y = ySpeed;
 
         controller.Move(actual_movement * Time.deltaTime * speed);
     }
@@ -52,6 +73,14 @@ public class FirstPersonController : MonoBehaviour
     void OnMove(InputValue moveVal)
     {
         movement = moveVal.Get<Vector2>();
+    }
+
+    void OnJump()
+    {
+        if (controller.isGrounded)
+        {
+            hasJumped = true;
+        }
     }
     void OnAttack()
     {

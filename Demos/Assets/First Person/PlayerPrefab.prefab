@@ -61,14 +61,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5440635375673756933}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.43892175, z: -0, w: 0.89852536}
   m_LocalPosition: {x: 0, y: 1.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1345225667482507607}
   m_Father: {fileID: 6794736356131929605}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 52.07, z: 0}
 --- !u!33 &156277235424910708
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -164,7 +164,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8d7a290df4e754bbe75bd7b3f58ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
+  mouseSensitivity: 40
+  cam: {fileID: 0}
+  bulletSpawner: {fileID: 0}
+  bullet: {fileID: 0}
+  jumpHeight: 3
+  gravityVal: 9.8
 --- !u!143 &2416287839086281625
 CharacterController:
   m_ObjectHideFlags: 0
