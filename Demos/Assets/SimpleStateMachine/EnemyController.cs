@@ -87,7 +87,7 @@ public class EnemyController : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
     }
 
@@ -100,9 +100,9 @@ public class EnemyController : MonoBehaviour
     GameObject CheckForward()
     {
         RaycastHit hit;
-        
-        
-        if(Physics.Raycast(transform.position, transform.forward, out hit, 13))
+
+        Debug.DrawRay(transform.position, transform.forward, Color.green);
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 20))
         {
             PlayerStateManager player = hit.transform.gameObject.GetComponent<PlayerStateManager>();
             if (player != null)
