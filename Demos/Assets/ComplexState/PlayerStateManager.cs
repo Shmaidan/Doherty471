@@ -92,7 +92,7 @@ public class PlayerStateManager : MonoBehaviour
 
         Vector3 actual_movement = new Vector3(moveX, 0, moveZ);
 
-
+        Vector3 movement_for_look = new Vector3(actual_movement.x, 0, actual_movement.z);
         controller.Move(actual_movement * Time.deltaTime * player_speed);
     }
     
