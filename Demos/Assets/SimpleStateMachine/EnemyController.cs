@@ -20,10 +20,12 @@ public class EnemyController : MonoBehaviour
 
 
     private State currentState = State.Pace;
+
+    Animator anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,6 +44,7 @@ public class EnemyController : MonoBehaviour
     }
     void OnPace()
     {
+        anim.SetBool("Following", false);
         //what do we do when pacing?
         print("I'm pacing!");
         target = route[routeIndex];
@@ -69,6 +72,7 @@ public class EnemyController : MonoBehaviour
 
     void OnFollow()
     {
+        anim.SetBool("Following", true);
         //what do we do when following?
         print("I'm Following");
         MoveTo(target);
@@ -87,7 +91,8 @@ public class EnemyController : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            SceneManager.LoadScene(0);
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
         }
     }
 

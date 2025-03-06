@@ -14,9 +14,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/SimpleStateMachine/New Scene.unity
     guid: 70bb385f2f6c13146844601a0682f48d
-  - enabled: 1
+  - enabled: 0
     path: Assets/ComplexState/Game.unity
     guid: 0e87a49cb5ade8742b8103ff5e94c072
+  - enabled: 1
+    path: Assets/PolishDemo/Polish.unity
+    guid: dc4e8f50c76078149a55bb4ba8f2186b
+  - enabled: 1
+    path: Assets/PolishDemo/PolishEndGame.unity
+    guid: b91918349f4207c4583319f798dba74c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ae906fe5beee0754a9352947b8d8b4f4, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
