@@ -21,8 +21,11 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField]
     GameObject bullet;
 
+    private bool hasPowerup = false;
+
     //Jumping
     bool hasJumped = false;
+    
     float ySpeed = 0;
     [SerializeField]
     float jumpHeight = 1.0f;
@@ -66,7 +69,16 @@ public class FirstPersonController : MonoBehaviour
 
         controller.Move(actual_movement * Time.deltaTime * speed);
     }
-    void OnLook(InputValue lookVal)
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Powerup"))
+        {
+            hasPowerup = true;
+            Destroy(other.gameObject);
+        }
+    }
+
+     void OnLook(InputValue lookVal)
     {
         mouseMovement = lookVal.Get<Vector2>();
     }
@@ -86,5 +98,7 @@ public class FirstPersonController : MonoBehaviour
     {
         Instantiate(bullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
     }
-    }
+
+   
+}
 

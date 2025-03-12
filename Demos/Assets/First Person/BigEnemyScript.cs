@@ -1,18 +1,19 @@
 using UnityEngine;
 
 
-public class enemy : MonoBehaviour
+public class BigEnemyScript : MonoBehaviour
 {
-    int health = 4;
-    public ParticleSystem bloodParticles;
+    int health = 10;
+    public ParticleSystem BigBloodParticles;
     // public AudioSource death;
-   
 
+
+    Animator anim;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
         //death = GetComponent<AudioSource>();    
     }
 
@@ -23,14 +24,14 @@ public class enemy : MonoBehaviour
         if (health <= 0)
         {
 
-          // death.Play();
-            Instantiate(bloodParticles, transform.position, Quaternion.identity);
+            // death.Play();
+            Instantiate(BigBloodParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
-            
-            
-            
+
+
+
         }
-       
+
     }
 
 
@@ -40,10 +41,9 @@ public class enemy : MonoBehaviour
         {
 
             health -= 1;
-           
+
             Destroy(other.gameObject);
         }
     }
-    
-}
 
+}

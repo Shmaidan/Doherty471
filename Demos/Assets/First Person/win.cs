@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class win : MonoBehaviour
 {
-    public GameObject youWinUI;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        youWinUI.SetActive(false);
+       
     }
 
     // Update is called once per frame
@@ -15,8 +15,8 @@ public class win : MonoBehaviour
     {
         if (GameObject.FindGameObjectsWithTag("enemy").Length == 0)
         {
-           
-            ReloadScene();
+
+            SceneManager.LoadScene("PolishEndGame");
         }
         
     }
