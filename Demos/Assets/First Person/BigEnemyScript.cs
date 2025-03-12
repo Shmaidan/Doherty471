@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BigEnemyScript : MonoBehaviour
 {
-    int health = 10;
+    int health = 12;
     public ParticleSystem BigBloodParticles;
     // public AudioSource death;
 

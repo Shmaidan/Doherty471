@@ -4,10 +4,10 @@ public class bullet : MonoBehaviour
 {
     Rigidbody rb;
     [SerializeField]
-    float bulletspeed = 6;
+    public float bulletspeed = 12;
     [SerializeField]
     float lifetime = 3;
-    private bool hasPowerup = false;
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
